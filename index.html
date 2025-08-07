@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 정보</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <h1>날씨 정보</h1>
+        
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="도시명 또는 국가명을 입력하세요 (예: 서울, 한국, Japan)">
+            <button onclick="searchWeather()">검색</button>
+        </div>
+        
+        <div class="weather-container" id="weatherContainer">
+            <div class="loading" id="loading" style="display: none;">날씨 정보를 불러오는 중...</div>
+            
+            <div class="weather-info" id="weatherInfo" style="display: none;">
+                <div class="location">
+                    <h2 id="locationName"></h2>
+                    <p id="localTime"></p>
+                </div>
+                
+                <div class="current-weather">
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="날씨 아이콘">
+                    </div>
+                    <div class="temperature">
+                        <span id="temperature"></span>°C
+                    </div>
+                    <div class="condition">
+                        <span id="condition"></span>
+                    </div>
+                </div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <span class="label">체감온도:</span>
+                        <span id="feelsLike"></span>°C
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">습도:</span>
+                        <span id="humidity"></span>%
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">바람:</span>
+                        <span id="wind"></span> km/h
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">가시거리:</span>
+                        <span id="visibility"></span> km
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">기압:</span>
+                        <span id="pressure"></span> mb
+                    </div>
+                    <div class="detail-item">
+                        <span class="label">UV 지수:</span>
+                        <span id="uv"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error" id="error" style="display: none;">
+                <p>날씨 정보를 불러올 수 없습니다. 도시명을 확인해주세요.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
